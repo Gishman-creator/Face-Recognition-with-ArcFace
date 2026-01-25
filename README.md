@@ -5,23 +5,6 @@ Powered by ArcFace ONNX embeddings and 5-point facial alignment. Designed for ef
 
 ---
 
-## ⚡ Key Features
-
-*   **Optimized for CPU**: No expensive GPU required.
-*   **High Accuracy**: Uses 512-dimensional ArcFace embeddings.
-*   **Privacy First**: Local processing with offline database storage.
-*   **Real-Time**: Fast detection and recognition pipeline.
-
----
-
-## 🛠️ System Requirements
-
-*   **Python**: 3.9 or newer
-*   **OS**: Windows, Linux, or macOS
-*   **Hardware**: Webcam required
-
----
-
 ## 📥 Installation
 
 ### 1. Setup Environment
