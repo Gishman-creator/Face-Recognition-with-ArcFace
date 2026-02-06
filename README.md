@@ -72,6 +72,18 @@ python -m src.recognize
 ```
 The system will now identify enrolled faces in real-time.
 
+### 4. Face Locking (Single Target)
+Lock onto a specific person and track their actions (blink, smile, move).
+```bash
+python -m src.facelock
+```
+
+### 5. Smart Lock & Recognize
+Lock onto a specific person while simultaneously recognizing everyone else in the frame.
+```bash
+python -m src.lock_and_recognize
+```
+
 ---
 
 ## 🔧 Troubleshooting

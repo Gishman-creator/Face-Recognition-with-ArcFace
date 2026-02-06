@@ -374,7 +374,7 @@ def main():
     )
     db = load_db_npz(db_path)
     matcher = FaceDBMatcher(db=db, dist_thresh=0.62)
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(1)
     if not cap.isOpened():
         raise RuntimeError("Camera not available")
     print("Recognize (multi-face). q=quit, r=reload DB, +/- threshold, d=debug overlay")
@@ -404,7 +404,7 @@ def main():
         shown = 0
 
         for i, f in enumerate(faces):
-            cv2.rectangle(vis, (f.x1, f.y1), (f.x2, f.y2), (0, 255, 0), 2)
+            # cv2.rectangle(vis, (f.x1, f.y1), (f.x2, f.y2), (0, 255, 0), 2)
             for x, y in f.kps.astype(int):
                 cv2.circle(vis, (int(x), int(y)), 2, (0, 255, 0), -1)
             aligned, _ = align_face_5pt(frame, f.kps, out_size=(112, 112))
@@ -414,6 +414,7 @@ def main():
             line1 = f"{label}"
             line2 = f"dist={mr.distance:.3f} sim={mr.similarity:.3f}"
             color = (0, 255, 0) if mr.accepted else (0, 0, 255)
+            cv2.rectangle(vis, (f.x1, f.y1), (f.x2, f.y2), color, 2)
             cv2.putText(
                 vis,
                 line1,
